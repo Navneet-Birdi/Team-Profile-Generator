@@ -1,18 +1,21 @@
 const inquirer = require('inquirer');
 
-
+const employees = [];
 
 //function to extract promise
 async function main(){
+    const managerRole = 'manager';
+    const engineerRole = 'engineer';
+    const internRole = 'intern';
     const answers = await inquirer.prompt([
         {
             type: 'list',
             message: 'What is the role?',
             name: 'role',
             choices: [
-                'manager',
-                'engineer',
-                'intern',
+                'managerRole',
+                'engineerRole',
+                'internRole',
             ]
         //store all the info we got 
 
@@ -47,20 +50,20 @@ async function main(){
             type: 'input',
             message: 'What is the office number?',
             name: 'office number',
-            when: (answers) => answers.role === 'manager',
+            when: (answers) => answers.role === 'managerRole',
             },
         
             {
                 type: 'input',
                 message: 'What is the github username?',
                 name: 'github',
-                when: (answers) => answers.role === 'engineer',
+                when: (answers) => answers.role === 'engineerRole',
                 },
                 {
                     type: 'input',
                     message: 'What is the school?',
                     name: 'school',
-                    when: (answers) => answers.role === 'intern',
+                    when: (answers) => answers.role === 'internRole',
                     },
                     {
                         type: 'confirm',
@@ -69,6 +72,34 @@ async function main(){
                         
                         }
     ]);
+
+//once we got an employee, store it
+//check for the role
+//for manager role
+if (answers.role === 'managerRole'){
+    employees.push(new manager(answers.id, answers.email, answers.name, answers.office_number));
+}
+
+//for engineer role
+if (answers.role === 'engineerRole'){
+    employees.push(new engineer(answers.id, answers.email, answers.name, answers.github));
+}
+
+//for intern role
+if (answers.role === 'internRole'){
+    employees.push(new intern(answers.id, answers.email, answers.name, answers.school));
+}
+
+console.log(employees);
+//create the employee object based on the role
+
+
+//add to the employee arrayt
+
+
+
+
+
 
 if (!answers.add_another){
     //generating html
