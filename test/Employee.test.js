@@ -1,12 +1,6 @@
 const Employee = require("../src/employees/Employee")
-
-
 describe("Employee Test", () => {
-
-
-
-
-  test("getName() will return the name property", () => {
+test("getName() will return the name property", () => {
 
     // Arrange -- prepare the env
     const name = 'Nav';
@@ -21,8 +15,5 @@ describe("Employee Test", () => {
     expect(result).toStrictEqual(name);
 
   });
-
-
-
 
 })

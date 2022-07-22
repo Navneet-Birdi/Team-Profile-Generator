@@ -1,12 +1,6 @@
 const Engineer = require("../src/employees/Engineer")
-
-
 describe("Engineer Test", () => {
-
-
-
-
-  test("getGithub() will return the name property", () => {
+test("getGithub() will return the name property", () => {
 
     // Arrange -- prepare the env
     const name = 'ABC';

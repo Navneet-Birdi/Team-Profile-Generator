@@ -1,13 +1,7 @@
 const Manager = require("../src/employees/Manager");
 
-
-
 describe("Manager Test", () => {
-
-
-
-
-  test("getName() will return the name property", () => {
+test("getName() will return the name property", () => {
 
     // Arrange -- prepare the env
     const name = 'XYZ';

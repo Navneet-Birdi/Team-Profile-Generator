@@ -1,12 +1,6 @@
 const Intern = require("../src/employees/Intern")
-
-
 describe("Intern Test", () => {
-
-
-
-
-  test("getSchool() will return the school name property", () => {
+test("getSchool() will return the school name property", () => {
 
     // Arrange -- prepare the env
     const name = 'XYZ';
