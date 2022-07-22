@@ -5,8 +5,6 @@ const Manager = require('./src/employees/Manager');
 const fs = require('fs');
 const path = require('path');
 const generateHtml = require('./src/generate-html/html');
-
-
 const employees = [];
 const outputHtmlFile = path.join(__dirname, 'output', 'team.html');
 
@@ -27,38 +25,30 @@ async function main(){
                 'internRole',
             ]
         //store all the info we got 
-
-
-//once we stop adding new employee, will ge nerate html based on employees collected
+//once we stop adding new employee, will generate html based on employees collected
         },
-        
-         
-        
-        //questions
+      //questions
         {
             type: 'input',
             message: 'What is the ID of the employee?',
             name: 'id',
-        
         },
         {
             type: 'input',
             message: 'What is the email of the employee?',
             name: 'email',
-        
         },
         
         {
             type: 'input',
             message: 'What is the name of the employee?',
             name: 'name',
-        
         },
         //options when user selects manager
         {
             type: 'input',
             message: 'What is the office number?',
-            name: 'office number',
+            name: 'officeNumber',
             when: (answers) => answers.role === 'managerRole',
             },
         
@@ -77,7 +67,7 @@ async function main(){
                     {
                         type: 'confirm',
                         message: 'Would you like to add another employee?',
-                        name: 'add:another',
+                        name: 'addAnother',
                         
                         }
     ]);
@@ -86,7 +76,7 @@ async function main(){
 //check for the role
 //for manager role
 if (answers.role === 'managerRole'){
-    employees.push(new Manager(answers.id, answers.email, answers.name, answers.office_number));
+    employees.push(new Manager(answers.id, answers.email, answers.name, answers.officeNumber));
 }
 
 //for engineer role
@@ -101,7 +91,7 @@ if (answers.role === 'internRole'){
 
 console.log(employees);
 
-if (!answers.another){
+if (!answers.addAnother){
    // generate the html
    const html = generateHtml(employees);
 
