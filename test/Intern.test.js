@@ -6,12 +6,12 @@ describe("Intern Test", () => {
 
 
 
-  test("getIntern() will return the name property", () => {
+  test("getSchool() will return the school name property", () => {
 
     // Arrange -- prepare the env
     const name = 'XYZ';
 
-    const addIntern = new Intern(1, 'xyz@xyz.com',' abc-school');
+    const addIntern = new Intern(1, "xyz@xyz.com", name, " abc-school");
 
     // act
     const result =addIntern.getName();

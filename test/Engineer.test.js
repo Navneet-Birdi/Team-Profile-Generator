@@ -6,7 +6,7 @@ describe("Engineer Test", () => {
 
 
 
-  test("getName() will return the name property", () => {
+  test("getGithub() will return the name property", () => {
 
     // Arrange -- prepare the env
     const name = 'ABC';

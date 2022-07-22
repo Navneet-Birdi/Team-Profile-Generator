@@ -100,15 +100,6 @@ if (answers.role === 'internRole'){
 }
 
 console.log(employees);
-//create the employee object based on the role
-
-
-//add to the employee arrayt
-
-
-
-
-
 
 if (!answers.add_another){
    // generate the html
@@ -122,35 +113,3 @@ if (!answers.add_another){
 }
 
 main();
-//questions to generate a team profile
-
-
-
-//to add new employee until its enough
-//ID,name email for employee
-
-
-
-
-
-
-
-
-
-
-//for manager office number
-
-
-
-//for engineer github
-
-
-
-//for intern, school
-
-
-
-
-
-
-
