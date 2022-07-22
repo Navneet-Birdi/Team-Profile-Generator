@@ -77,7 +77,7 @@ async function main(){
                     {
                         type: 'confirm',
                         message: 'Would you like to add another employee?',
-                        name: 'add another',
+                        name: 'add:another',
                         
                         }
     ]);
@@ -101,7 +101,7 @@ if (answers.role === 'internRole'){
 
 console.log(employees);
 
-if (!answers.add_another){
+if (!answers.another){
    // generate the html
    const html = generateHtml(employees);
 
