@@ -1,6 +1,15 @@
 const inquirer = require('inquirer');
+const Engineer = require('./src/employees/Engineer');
+const Intern = require('./src/employees/Intern');
+const Manager = require('./src/employees/Manager');
+const fs = require('fs');
+const path = require('path');
+const generateHtml = require('./src/generate-html/html');
+
 
 const employees = [];
+const outputHtmlFile = path.join(__dirname, 'output', 'team.html');
+
 
 //function to extract promise
 async function main(){
@@ -77,17 +86,17 @@ async function main(){
 //check for the role
 //for manager role
 if (answers.role === 'managerRole'){
-    employees.push(new manager(answers.id, answers.email, answers.name, answers.office_number));
+    employees.push(new Manager(answers.id, answers.email, answers.name, answers.office_number));
 }
 
 //for engineer role
 if (answers.role === 'engineerRole'){
-    employees.push(new engineer(answers.id, answers.email, answers.name, answers.github));
+    employees.push(new Engineer(answers.id, answers.email, answers.name, answers.github));
 }
 
 //for intern role
 if (answers.role === 'internRole'){
-    employees.push(new intern(answers.id, answers.email, answers.name, answers.school));
+    employees.push(new Intern(answers.id, answers.email, answers.name, answers.school));
 }
 
 console.log(employees);
@@ -102,8 +111,11 @@ console.log(employees);
 
 
 if (!answers.add_another){
-    //generating html
+   // generate the html
+   const html = generateHtml(employees);
 
+   // call fs, write to a file
+   fs.writeFileSync(outputHtmlFile, html, 'utf-8');
 }else{
     await main();
 }

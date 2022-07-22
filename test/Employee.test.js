@@ -11,10 +11,10 @@ describe("Employee Test", () => {
     // Arrange -- prepare the env
     const name = 'Nav';
 
-    const dummy = new Employee(1, 'nav@nav.com', name);
+    const moreEmployee = new Employee(1, 'nav@nav.com', name);
 
     // act
-    const result =dummy.getName();
+    const result =moreEmployee.getName();
 
 
     // assert
