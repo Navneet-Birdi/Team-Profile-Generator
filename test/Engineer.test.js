@@ -1,4 +1,4 @@
-const Employee = require("../src/employees/Engineer")
+const Engineer = require("../src/employees/Engineer")
 
 
 describe("Engineer Test", () => {
