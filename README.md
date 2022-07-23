@@ -35,5 +35,5 @@ This is command line application, which genertaes profiles for employees by stor
 
 ## Prerequisites: Node.js, Inquirer
 
-## Link to video:
+## Link to video:https://watch.screencastify.com/v/cFEyygrKkH7ZGNXvoP9i
 
